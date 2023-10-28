@@ -1,0 +1,34 @@
+<template>
+  <div class="film-list">
+    <film-card
+      class="film-card"
+      v-for="film in films"
+      :key="film.id"
+      :film="film"
+    />
+  </div>
+</template>
+
+<script>
+import FilmCard from "./FilmCard";
+
+export default {
+  props: {
+    films: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  components: { FilmCard },
+};
+</script>
+
+<style>
+.film-list {
+  margin: 0 auto;
+  text-align: center;
+}
+.film-card {
+  margin-bottom: 40px;
+}
+</style>
